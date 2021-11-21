@@ -1,0 +1,92 @@
+﻿@page
+@model HappyPaws.Pages.Appointments.HistoryModel
+@{ ViewData["Title"] = "History";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<div class="container pt-4 pb-2 row">
+    <div class="col-6">
+        <h2 class="py-2">Medical Appointment History</h2>
+    </div>
+    <div class="col-3 offset-3 text-right py-2">
+        <a asp-page="../Pets/Index" asp-route-userId="@Model.UserId" class="btn btn-dark form-control">Back to List</a>
+    </div>
+</div>
+
+@if(Model.MedicalServiceHeader.Count==0)
+    {
+        <div class="background-white">
+            <p>No records found.</p>
+        </div>
+    }
+else
+    {
+  
+        <div class="container" style="background-color:black">
+            <div class="card">
+                <div class="card-header bg-dark text-light ml-0 row container">
+                    <div class="col-1 text-center pt-3 text-white-50">
+                        <i class="far fa-user fa-2x"></i>
+                    </div>
+                    <div class="col-5">
+                        <label class="text-light">@Model.MedicalServiceHeader[0].Pet.ApplicationUser.Name</label><br />
+                        <label class="text-light">@Model.MedicalServiceHeader[0].Pet.ApplicationUser.Email</label><br />
+                        <label class="text-light">@Model.MedicalServiceHeader[0].Pet.ApplicationUser.PhoneNumber</label><br />
+                    </div>
+
+                    <div class="col-5 text-right">
+                        <label class="text-light">@Model.MedicalServiceHeader[0].Pet.Name</label><br />
+                        <label class="text-light">@Model.MedicalServiceHeader[0].Pet.Breed</label><br />
+                        
+                    </div>
+                    <div class="col-1 text-right pt-3 text-white-50">
+                        <i class="fas fa-dog fa-2x"></i>
+                    </div>
+
+                </div>
+                <div class="card-body">
+
+                    <table class="table table-striped border">
+                        <tr class="table-secondary">
+                            <th>
+                                @Html.DisplayNameFor(m => Model.MedicalServiceHeader[0].TotalPrice)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(m => Model.MedicalServiceHeader[0].Details)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(m => Model.MedicalServiceHeader[0].AppointmentDate)
+                            </th>
+                            <th>
+
+                            </th>
+                        </tr>
+                        @foreach (var item in Model.MedicalServiceHeader)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(m => item.TotalPrice)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => item.Details)
+                                </td>
+                               
+                                <td>
+                                    @Html.DisplayFor(m => item.AppointmentDate)
+                                </td>
+                                <td>
+                                    <a asp-page="Details" class="btn btn-info form-control" asp-route-appointmentid="@item.Id">
+                                        <i class="fas fa-list-alt"></i> Details
+                                    </a>
+                                   
+                                </td>
+                            </tr>
+                        }
+               
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    }
