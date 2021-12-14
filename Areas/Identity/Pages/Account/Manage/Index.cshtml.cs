@@ -34,7 +34,8 @@ namespace HappyPaws.Areas.Identity.Pages.Account.Manage
         {
             [Phone]
             [Display(Name = "Phone number")]
-            public string PhoneNumber { get; set; }
+            public string phoneNumber { get; set; }
+            public string PhoneNumber { get; internal set; }
         }
 
         private async Task LoadAsync(IdentityUser user)
@@ -46,7 +47,7 @@ namespace HappyPaws.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                PhoneNumber =phoneNumber
             };
         }
 

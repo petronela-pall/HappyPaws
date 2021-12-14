@@ -15,7 +15,7 @@ namespace HappyPaws.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.20")
+                .HasAnnotation("ProductVersion", "3.1.21")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -378,7 +378,7 @@ namespace HappyPaws.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Telephonenumber")
+                    b.Property<int>("Phonenumber")
                         .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");

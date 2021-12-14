@@ -8,9 +8,9 @@ namespace HappyPaws.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
-                name: "TelephoneNumber",
+                name: "PhoneNumber",
                 table: "AspNetUsers",
-                newName: "Telephonenumber");
+                newName: "Phonenumber");
 
             migrationBuilder.CreateTable(
                 name: "Doctor",
@@ -34,9 +34,9 @@ namespace HappyPaws.Data.Migrations
                 name: "Doctor");
 
             migrationBuilder.RenameColumn(
-                name: "Telephonenumber",
+                name: "Phonenumber",
                 table: "AspNetUsers",
-                newName: "TelephoneNumber");
+                newName: "PhoneNumber");
         }
     }
 }

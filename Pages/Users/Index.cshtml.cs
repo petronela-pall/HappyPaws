@@ -65,7 +65,7 @@ namespace HappyPaws.Pages.Users
                 {
                     if (searchPhone != null)
                     {
-                        UsersListVM.ApplicationUserList = await _db.ApplicationUSer.Where(u => u.PhoneNumber.ToLower().Contains(searchPhone.ToLower())).ToListAsync();
+                       // UsersListVM.ApplicationUserList = await _db.ApplicationUSer.Where(u => u.PhoneNumber.ToLower.Contains(searchPhone.ToLower())).ToListAsync();
                     }
                 }
             }

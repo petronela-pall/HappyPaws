@@ -10,14 +10,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HappyPaws.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211121091648_Doctor")]
-    partial class Doctor
+    [Migration("20211213092915_repairPhoneNumber")]
+    partial class repairPhoneNumber
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.20")
+                .HasAnnotation("ProductVersion", "3.1.21")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 

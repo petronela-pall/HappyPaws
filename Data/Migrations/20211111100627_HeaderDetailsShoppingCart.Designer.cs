@@ -359,7 +359,7 @@ namespace HappyPaws.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TelephoneNumber")
+                    b.Property<int>("PhoneNumber")
                         .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");

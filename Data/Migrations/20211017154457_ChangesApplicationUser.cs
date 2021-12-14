@@ -12,7 +12,7 @@ namespace HappyPaws.Data.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<int>(
-                name: "TelephoneNumber",
+                name: "PhoneNumber",
                 table: "AspNetUsers",
                 nullable: true);
 
@@ -30,7 +30,7 @@ namespace HappyPaws.Data.Migrations
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(
-                name: "TelephoneNumber",
+                name: "PhoneNumber",
                 table: "AspNetUsers");
 
             migrationBuilder.DropColumn(

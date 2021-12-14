@@ -6,47 +6,79 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Doctor[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Doctor[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Doctor[0].Picture)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Doctor) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Picture)
-            </td>
+<br />
+<br />
+<div class="border background-white">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-info">Medical Personnel List</h2>
+        </div>
+        <div class="col-6 text-right">
             @if (User.IsInRole("Admin"))
             {
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-                </td>
+                <a asp-page="Create" class="btn btn-info">
+                    <i class="fas fa-plus"></i> &nbsp; Create New
+                </a>
             }
-            </tr>
-}
-    </tbody>
-</table>
+        </div>
+    </div>
+    <br />
+    <div>
+        @if (Model.Doctor.Count == 0)
+        {
+            <p>No MDoctor Exist. Please create a new Doctor.</p>
+        }
+        else
+        {
+            <table class="table table-striped border">
+                <tr class="table-secondary">
+                    <th>
+                        @Html.DisplayNameFor(m => m.Doctor[0].Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Doctor[0].Description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Doctor[0].Picture)
+                    </th>
+
+                    <th></th>
+                </tr>
+                @foreach (var item in Model.Doctor)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(m => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => item.Picture)
+                        </td>
+                        <td style="width:150px;">
+
+                            <div class="btn-group" role="group">
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a class="btn btn-primary text-white" asp-page="Edit" asp-route-Id="@item.ID">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+
+                                    <a class="btn btn-success text-white" asp-page="Details" asp-route-Id="@item.ID">
+                                        <i class="far fa-list-alt"></i>
+                                    </a>
+                                    <a class="btn btn-danger text-white" asp-page="Delete" asp-route-Id="@item.ID">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+
+</div>

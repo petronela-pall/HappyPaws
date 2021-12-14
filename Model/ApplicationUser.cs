@@ -12,9 +12,7 @@ namespace HappyPaws.Model
         public string Name { get; set; }
 
       
-       public int Telephonenumber { get; set; }
-       public string PhoneNumber { get; set; }
-
-       
+      
+        //public object PhoneNumber { get; internal set; }
     }
 }
