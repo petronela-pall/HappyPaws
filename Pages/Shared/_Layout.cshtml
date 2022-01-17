@@ -13,39 +13,26 @@
         <script src="https://kit.fontawesome.com/e234dc2ef4.js" crossorigin="anonymous"></script>
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/mystyle.css" />
 </head>
 <body class="search-background">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Happy Paws</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
+        <nav class="navbar ">
+            <div class="container-left">
+                    <ul>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-
-
                             <a class="nav-link" asp-area="" asp-page="/MedicalServices/Index">Medical Services</a>
-
-                        </li>
+                         </li>
                         <li class="nav-item">
-
-
                             <a class="nav-link" asp-area="" asp-page="/Doctors/Index">Medical Team</a>
-
                         </li>
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-page="/Users/Index">User Accounts</a>
-
 
                             </li>
                         }
@@ -53,11 +40,13 @@
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-page="/Pets/Index">My Pets</a>
-
                             </li>
                         }
                     </ul>
                 </div>
+            
+            <div class="container-right">
+                <partial name="_LoginPartial" />
             </div>
         </nav>
     </header>
