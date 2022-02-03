@@ -62,4 +62,13 @@ a{
 }
 #background {
     position: relative;
+    
+}
+#contact-info {
+    position: absolute;
+    bottom: 50px;
+    right: 380px;
+    font-family: Britannic;
+    font-size: 25px;
+    text-align: center;
 }
